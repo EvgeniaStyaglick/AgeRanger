@@ -1,0 +1,39 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+        <h3>
+            {{ title }}
+        </h3>
+        <hr />
+        <form role="form" style="max-width: 500px;">
+            <strong class="error">{{ error }}</strong>
+            <div class="form-group">
+                <label for="firstname">
+                    First Name
+                </label>
+                <input type="text" class="form-control" id="firstname" ng-model="firstname" />
+            </div>
+            <div class="form-group">
+                <label for="lastname">
+                    Last Name:
+                </label>
+                <input type="text" class="form-control" id="lastname" ng-model="lastname" />
+            </div>
+            <div class="form-group">
+                <label for="age">
+                    Age:
+                </label>
+                <input type="number" min="0" step="1" class="form-control" id="age" ng-model="age" />
+            </div>
+            <div class="form-group" ng-if="agegroup">
+                <label for="agegroup">
+                    Age Group:
+                </label>
+                <input type="text" class="form-control" id="lastname" ng-model="agegroup" readonly />
+            </div>
+            <a href="#/list" class="btn btn-info">Back to List</a>
+            <button type="submit" class="btn btn-default" ng-click="save()">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>

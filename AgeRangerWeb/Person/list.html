@@ -1,0 +1,44 @@
+﻿
+<div class="row margin-bottom">
+    <div class="col-sm-3">
+        <input type="text" class="form-control" placeholder="Enter text to search" 
+               ng-model="searchText" ng-change="filterItems()"/>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-default" ng-click="create()">
+            Create new person
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <strong class="error padding-error">{{ error }}</strong>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>AgeGroup</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="item in filteredPersons">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.firstName }}</td>
+                    <td>{{ item.lastName }}</td>
+                    <td>{{ item.age }}</td>
+                    <td>{{ item.ageGroup }}</td>
+                    <td>
+                        <div ng-click="edit(item.id)" class="glyphicon glyphicon-edit"></div>
+                    </td>
+                    <td>
+                        <div ng-click="delete(item.id)" class="glyphicon glyphicon-trash"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
